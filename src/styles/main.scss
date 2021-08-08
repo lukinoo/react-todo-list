@@ -1,0 +1,115 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$whiteColor: #fff;
+$boxShadow:rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+$purpleColor: #bb8ff1;
+$blackColor: #000;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #E3E9FF;
+}
+
+header {
+    min-height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(40deg, #a18cd1 0%, #fbc2eb 100%);
+    color: $whiteColor;
+    box-shadow: $boxShadow;
+    .todo-title {
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+form {
+    min-height: 18vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .todo-input, .todo-button {
+        padding: 0.4rem 0.7rem;
+        font-size: 1.1rem;
+        font-family: inherit;
+        outline: none;
+        border: none;
+        background: $whiteColor;
+        box-shadow: $boxShadow;
+    }
+    .todo-input {
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+        padding-left: 0.6rem;
+    }
+    .todo-button {
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        color: $purpleColor;
+        cursor: pointer;
+        border-left: none;
+        transition: all 0.2s ease;
+        &:hover {
+            background: $purpleColor;
+            color: $whiteColor;
+        }
+    }
+}
+
+.todo-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    .todo-list {
+        min-width: 30%;
+        list-style: none;
+        .todo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 0.3rem;
+            margin: 0.6rem 0rem;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            color: $whiteColor;
+            // border-left: 5px solid $purpleColor;
+            background: $whiteColor;
+            color: $blackColor;
+            transition: all 0.3s ease;
+            .trash-button {
+                padding: 0.4rem 0.8rem;
+                border: none;
+                background: $whiteColor;
+                font-size: 1rem;
+                opacity: 0;
+                background: none;
+                transition: all 0.2s ease;
+                cursor: pointer;
+                .far {
+                    pointer-events: none;
+                }
+            }
+            &:hover .trash-button {
+                opacity: 1;
+                background: #fbc2eb;
+                color: $whiteColor;
+            }
+        }
+    }
+}
+
+.time-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-done {
+    text-decoration: line-through;
+    opacity: 0.4;
+    transform: scale(0.98);
+}
