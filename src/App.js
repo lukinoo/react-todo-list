@@ -15,7 +15,7 @@ function App() {
       <div className="todo-container">
         <ul className="todo-list">
           {todos.map(todo => (
-            <Todo text={todo.text} checked={todo.checked} color={todo.color} todo={todo} todos={todos} setTodos={setTodos} />
+            <Todo key={todo.id} text={todo.text} checked={todo.checked} color={todo.color} todo={todo} todos={todos} setTodos={setTodos} />
           ))}
         </ul>
       </div>
